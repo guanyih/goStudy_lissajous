@@ -14,11 +14,11 @@ import (
 var palette = []color.Color{color.White, color.RGBA{0, 128, 0, 1}, color.RGBA{160, 0, 0, 1}, color.RGBA{218, 165, 32, 1}, color.RGBA{255, 0, 255, 1}}
 
 const (
-	whiteIndex   = 0 //first color in the palette
-	greenIndex   = 1 //next color in the palette
-	redIndex     = 2 //the 3rd color in the palette
-	goldIndex    = 3 //the 4th color in the palette
-	magentaIndex = 4 //the 5th color in the palette
+	whiteIndexIndexIndex = 0 //first color in the palette
+	greenIndex           = 1 //next color in the palette
+	redIndex             = 2 //the 3rd color in the palette
+	goldIndex            = 3 //the 4th color in the palette
+	magentaIndex         = 4 //the 5th color in the palette
 )
 
 func main() {
@@ -41,7 +41,7 @@ func lissajous(out io.Writer) {
 	for i := 0; i < nframes; i++ {
 		rec := image.Rect(0, 0, size*2+1, 2*size+1)
 		img := image.NewPaletted(rec, palette)
-		rr := uint8(r.Int31n(5))
+		rr := uint8(r.Int31n(4) + 1)
 
 		for t := 0.0; t < cycles*2*math.Pi; t += res {
 			x := math.Sin(t)
